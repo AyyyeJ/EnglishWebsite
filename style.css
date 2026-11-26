@@ -1,15 +1,22 @@
-/*
-Good colors
-Light bluish: #B3CEE5
 
-*/
+/* ==============================
+   Color Palette
+============================== */
+
 :root {
     --background-color: #E6E1F0;
     --navigation-color: #6F6289;
     --section-color: #D2D9DB;
     --card-color: #B3CEE5;
     --button-color: #CFE3E2;
+    --hover-color: #4A90E2;
+    --active-color: #277CDE;
 }
+
+
+/* ==============================
+   General Styles
+============================== */
 
 * {
     box-sizing: border-box;
@@ -20,17 +27,15 @@ html {
 }
 
 body {
-    /*General Font stuff*/
     background-color: var(--background-color);
     color: black;
-    font-family:  "Comic Relief", Arial, sans-serif;
-    padding: 15px;
+    font-family: "Comic Relief", Arial, sans-serif;
     font-size: 1rem;
     line-height: 1.5;
+    padding: 15px;
 }
 
 h1 {
-    color: black;
     text-align: center;
     text-decoration: underline;
 }
@@ -39,100 +44,130 @@ h2 {
     color: blueviolet;
 }
 
-/*Navigation links at the top */
+
+/* ==============================
+   Navigation
+============================== */
+
 nav {
-    text-align: center;
-    background-color: var(--navigation-color);
-    padding: 10px;
-    margin: 0 auto 20px;
-    border: 0px solid black;
-    border-radius: 5px;
-    width: fit-content;
     display: flex;
     justify-content: center;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px;
+
+    width: fit-content;
     max-width: 100%;
+    margin: 0 auto 20px;
+    padding: 10px;
+
+    background-color: var(--navigation-color);
+    border-radius: 5px;
+    text-align: center;
 }
 
-/*End of Navigation stuff */
 
-/*Controls button stuff*/
-button {
-    color: black;
-    background-color: var(--button-color);
-    padding: 10px 20px;
-    border: 1px solid black;
+/* ==============================
+   Buttons
+============================== */
+
+/* Shared button styles */
+button,
+.nav-btn,
+.play-btn {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-    font-weight: normal;
+}
+
+/* Standard and play buttons */
+button,
+.play-btn {
+    background-color: var(--button-color);
+    color: black;
+    padding: 10px 20px;
+    border: 1px solid black;
     font: inherit;
 }
 
-
-button:hover {
-    background-color: #4A90E2;
-
-}
-
+/* Navigation buttons */
 .nav-btn {
-
     color: white;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
     padding: 5px;
-    border-radius: 5px;
     border: 1px solid white;
-    cursor: pointer;
-
+    text-decoration: none;
 }
 
-.nav-btn:hover {
-    background-color: #4A90E2;
+/* Play buttons */
+.play-btn {
+    text-decoration: none;
+    margin-top: auto;
 }
 
-/*End of Button stuff*/
+/* Button interactions */
+button:hover,
+.nav-btn:hover,
+.play-btn:hover {
+    background-color: var(--hover-color);
+    transition-duration: 0.1s;
+}
+
+button:active,
+.nav-btn:active,
+.play-btn:active {
+    background-color: var(--active-color);
+}
+
+
+/* ==============================
+   Content Sections
+============================== */
 
 .content-section {
-    background-color: var(--section-color);
-    padding: 15px 20px;
-    margin: 0 auto 20px;
-    border: 2px solid black;
-    border-radius: 5px;
     width: 90%;
     max-width: 1000px;
+    margin: 0 auto 20px;
+    padding: 15px 20px;
+
+    background-color: var(--section-color);
+    border: 2px solid black;
+    border-radius: 5px;
     text-align: center;
 }
-
 
 #about {
     width: 60%;
     text-align: start;
 }
 
-/* Daily Game Stuff*/
+
+/* ==============================
+   Game Cards
+============================== */
+
 .game-container {
     display: flex;
     justify-content: center;
-    gap: 15px;
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 .game-card {
-    color: black;
-    background-color: var(--card-color);
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 8px;
-    text-align: center;
-    flex: 1 1 200px;
-    max-width: 300px;
-    min-width: 0;
-    min-height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1 1 200px;
+
+    min-width: 0;
+    max-width: 300px;
+    min-height: 200px;
+    padding: 10px;
+
+    background-color: var(--card-color);
+    color: black;
+    border: 1px solid black;
+    border-radius: 8px;
+
+    text-align: center;
     overflow-wrap: anywhere;
 }
 
@@ -142,8 +177,8 @@ button:hover {
 }
 
 .game-card p {
-    margin: 0 0 15px;
     font-size: 1rem;
+    margin: 0 0 15px;
 }
 
 .game-card button {
@@ -151,42 +186,29 @@ button:hover {
     margin-top: auto;
 }
 
-/*#daily-games{
-    
-} */
 
-/*End of Daily Game stuff*/
-/*Classroom Game Stuff*/
-/*#classroom-games {
-}*/
+/* ==============================
+   Footer
+============================== */
 
-/*End of Classroom Game Stuff*/
-/*WOW stuff*/
-/*#wow {
-}*/
-
-/*End of WOw stuff*/
 footer {
     padding-top: 15px;
     text-align: center;
 }
 
-/*Phone layout*/
+
+/* ==============================
+   Responsive Layout - Tablet
+============================== */
+
 @media (max-width: 1000px) {
-    #about {
-        width: 95%;
-    }
-
-    .content-section {
-        width: 95%;
-    }
-
     html {
         font-size: 130%;
     }
 
-    .game-card {
-        padding: 15px;
+    #about,
+    .content-section {
+        width: 95%;
     }
 
     nav {
@@ -194,23 +216,28 @@ footer {
         padding: 5px;
     }
 
-    button {
+    .game-card {
+        padding: 15px;
+    }
+
+    button,
+    .nav-btn {
         min-height: 44px;
     }
 
     .nav-btn {
-        min-height: 44px;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 }
 
-@media (max-width: 600px) {
-    #about {
-        width: 100%;
-    }
 
+/* ==============================
+   Responsive Layout - Mobile
+============================== */
+
+@media (max-width: 600px) {
     html {
         font-size: 100%;
     }
@@ -220,17 +247,18 @@ footer {
         padding: 10px;
     }
 
-    .content-section {
-        width: 100%;
-        padding: 15px 10px;
+    h1 {
+        font-size: 1.75rem;
     }
 
+    #about,
+    .content-section,
     nav {
         width: 100%;
     }
 
-    h1 {
-        font-size: 1.75rem;
+    .content-section {
+        padding: 15px 10px;
     }
 
     .game-card {

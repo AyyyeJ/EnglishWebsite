@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- 
+<!-------------------------------- 
 To update website
 git add .
 git commit -m "Describe my changes"
 git push
--->
+git pull --rebase origin main
+-------------------------------->
 
 <head>
     <meta charset="UTF-8">
@@ -19,7 +20,9 @@ git push
 </head>
 
 <body>
-    <!--Title-->
+    <!------------
+    Title
+    ------------>
     <h1>English Emporium </h1>
     <nav>
         <a href="#" class="nav-btn">Home</a>
@@ -34,7 +37,9 @@ git push
             to learn English.</p>
     </div>
 
-    <!--Daily Games-->
+    <!-----------
+    Daily Games
+    ------------>
     <div id="daily-games" class="content-section">
         <h2> Today's Games</h2>
         <p>Play a game every day. Challenge yourself!</p>
@@ -42,22 +47,24 @@ git push
             <div class="game-card">
                 <h3>Guess the Word</h3>
                 <p>Based off the NYTimes game, Wordle. You have 6 tries to guess the word.</p>
-                <button>Play Now</button>
+                <a href="games/wordleClone/index.html" class="play-btn">Play Now</a>
             </div>
             <div class="game-card">
                 <h3>Spelling Bee</h3>
                 <p>You are given 8 random letters. How many words can you make?</p>
-                <button>Play Now</button>
+                <a href="#" class="play-btn">Play Now</a>
             </div>
             <div class="game-card">
                 <h3>Connection</h3>
                 <p>You have 16 words and 4 categories. Find the connection. Good luck!</p>
-                <button>Play Now</button>
+                <a href="#" class="play-btn">Play Now</a>
             </div>
         </div>
     </div>
 
-    <!--Classroom Games-->
+    <!------------
+    Classroom Games
+    ------------>
 
     <div id="classroom-games" class="content-section">
         <h2>Classroom Games are found here!</h2>
@@ -71,16 +78,17 @@ git push
         <p>WIP but (perhaps daily) you will be able to see something new, either a movie, tv show, or song. IDK yet.</p>
         <button>Coming Soon</button>
     </div>
-    <!--Any Ideas
-            krillion game
-            grammar challenge game
-            synoymn game
-            meaning game
--->
+    <!------------
+    Any Ideas
+    krillion game
+    grammar challenge game
+    synoymn game
+    meaning game
+    ------------>
     <footer>
         English Emporium ©2026, AJ I.
     </footer>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>

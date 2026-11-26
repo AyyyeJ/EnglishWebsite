@@ -1,0 +1,268 @@
+
+/* ==============================
+   Color Palette
+============================== */
+
+:root {
+    --background-color: #E6E1F0;
+    --navigation-color: #6F6289;
+    --section-color: #D2D9DB;
+    --card-color: #B3CEE5;
+    --button-color: #CFE3E2;
+    --hover-color: #4A90E2;
+    --active-color: #277CDE;
+}
+
+
+/* ==============================
+   General Styles
+============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background-color: var(--background-color);
+    color: black;
+    font-family: "Comic Relief", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 15px;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+h2 {
+    color: blueviolet;
+}
+
+
+/* ==============================
+   Navigation
+============================== */
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 20px;
+    padding: 10px;
+
+    background-color: var(--navigation-color);
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+/* ==============================
+   Buttons
+============================== */
+
+/* Shared button styles */
+button,
+.nav-btn,
+.play-btn {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Standard and play buttons */
+button,
+.play-btn {
+    background-color: var(--button-color);
+    color: black;
+    padding: 10px 20px;
+    border: 1px solid black;
+    font: inherit;
+}
+
+/* Navigation buttons */
+.nav-btn {
+    color: white;
+    padding: 5px;
+    border: 1px solid white;
+    text-decoration: none;
+}
+
+/* Play buttons */
+.play-btn {
+    text-decoration: none;
+    margin-top: auto;
+}
+
+/* Button interactions */
+button:hover,
+.nav-btn:hover,
+.play-btn:hover {
+    background-color: var(--hover-color);
+    transition-duration: 0.1s;
+}
+
+button:active,
+.nav-btn:active,
+.play-btn:active {
+    background-color: var(--active-color);
+}
+
+
+/* ==============================
+   Content Sections
+============================== */
+
+.content-section {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 20px;
+    padding: 15px 20px;
+
+    background-color: var(--section-color);
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#about {
+    width: 60%;
+    text-align: start;
+}
+
+
+/* ==============================
+   Game Cards
+============================== */
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.game-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 200px;
+
+    min-width: 0;
+    max-width: 300px;
+    min-height: 200px;
+    padding: 10px;
+
+    background-color: var(--card-color);
+    color: black;
+    border: 1px solid black;
+    border-radius: 8px;
+
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.game-card h3 {
+    font-size: 1.25rem;
+    margin: 10px 0;
+}
+
+.game-card p {
+    font-size: 1rem;
+    margin: 0 0 15px;
+}
+
+.game-card button {
+    font-size: 1rem;
+    margin-top: auto;
+}
+
+
+/* ==============================
+   Footer
+============================== */
+
+footer {
+    padding-top: 15px;
+    text-align: center;
+}
+
+
+/* ==============================
+   Responsive Layout - Tablet
+============================== */
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 130%;
+    }
+
+    #about,
+    .content-section {
+        width: 95%;
+    }
+
+    nav {
+        gap: 5px;
+        padding: 5px;
+    }
+
+    .game-card {
+        padding: 15px;
+    }
+
+    button,
+    .nav-btn {
+        min-height: 44px;
+    }
+
+    .nav-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+/* ==============================
+   Responsive Layout - Mobile
+============================== */
+
+@media (max-width: 600px) {
+    html {
+        font-size: 100%;
+    }
+
+    body {
+        margin: 0;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    #about,
+    .content-section,
+    nav {
+        width: 100%;
+    }
+
+    .content-section {
+        padding: 15px 10px;
+    }
+
+    .game-card {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
